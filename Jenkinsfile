@@ -15,9 +15,9 @@ pipeline {
     }
     stages {
         stage('Make executable') {
-            steps {
-                bat('chmod +x ./scripts/fibonacci.bat')
-            }
+            // steps {
+            //     bat('chmod +x ./scripts/fibonacci.bat')
+            // }
         }
         stage('Relative path') {
             steps {
@@ -31,6 +31,7 @@ pipeline {
         }
         stage('Change directory') {
             steps {
+                bat("echo ${env.WORKSPACE}")
                 dir("${env.WORKSPACE}/scripts"){
                     bat("./fibonacci.bat ${env.NUMBER}")
                 }
