@@ -15,9 +15,10 @@ pipeline {
     }
     stages {
         stage('Make executable') {
-            // steps {
-            //     bat('chmod +x ./scripts/fibonacci.bat')
-            // }
+            steps {
+                // bat('chmod +x ./scripts/fibonacci.bat')
+                bat("echo ${env.WORKSPACE}")
+            }
         }
         stage('Relative path') {
             steps {
