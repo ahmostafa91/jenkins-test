@@ -17,27 +17,27 @@ pipeline {
         stage('Make executable') {
             steps {
                 // bat('chmod +x ./scripts/fibonacci.bat')
-                bat("echo ${env.WORKSPACE}")
+                bat("echo hello from script")
             }
         }
-        stage('Relative path') {
-            steps {
-                bat("./scripts/fibonacci.bat ${env.NUMBER}")
-            }
-        }
-        stage('Full path') {
-            steps {
-                bat("${env.WORKSPACE}/scripts/fibonacci.bat ${env.NUMBER}")
-            }
-        }
-        stage('Change directory') {
-            steps {
-                bat("echo ${env.WORKSPACE}")
-                dir("${env.WORKSPACE}/scripts"){
-                    bat("./fibonacci.bat ${env.NUMBER}")
-                }
-            }
-        }
+        // stage('Relative path') {
+        //     steps {
+        //         bat("./scripts/fibonacci.bat ${env.NUMBER}")
+        //     }
+        // }
+        // stage('Full path') {
+        //     steps {
+        //         bat("${env.WORKSPACE}/scripts/fibonacci.bat ${env.NUMBER}")
+        //     }
+        // }
+        // stage('Change directory') {
+        //     steps {
+        //         bat("echo ${env.WORKSPACE}")
+        //         dir("${env.WORKSPACE}/scripts"){
+        //             bat("./fibonacci.bat ${env.NUMBER}")
+        //         }
+        //     }
+        // }
     }
 }
 
